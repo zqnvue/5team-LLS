@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .el-header,
+        .el-footer {
+            background-color: #B3C0D1;
+            color: #333;
+            text-align: center;
+            min-height: 100px;
+            line-height: 100px;
+            letter-spacing: 8px;
+            font-size: 22px;
+            color: white;
+        }
+
+        .el-aside {
+            background-color: #D3DCE6;
+            color: #333;
+            text-align: center;
+            /* line-height: 5px; */
+        }
+
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: center;
+            min-height: 600px;
+            line-height: 80px;
+        }
+
+        body>.el-container {
+            margin-bottom: 40px;
+        }
+
+        .el-container:nth-child(5) .el-aside,
+        .el-container:nth-child(6) .el-aside {
+            line-height: 160px;
+        }
+
+        .el-container:nth-child(7) .el-aside {
+            line-height: 320px;
+        }
+
+        .el-aside img {
+            width: 200px;
+        }
+
+
+        .el-carousel__item:nth-child(2n) {
+            background-image: url(images/timg3.png);
+
+            background-size: 100% 100%;
+        }
+
+        .el-carousel__item:nth-child(2n+1) {
+            background-image: url(images/timg4.jpg);
+
+            background-size: 100% 100%;
+        }
+
+        .el-carousel {
+            margin-top: 30px;
+        }
+
+        .wenben .el-col {
+            letter-spacing: 5px;
+        }
+
+        .aside-t {
+            height: 100px;
+        }
+
+        .el-drawer img {
+            width: 100%;
+            margin-top: 0px;
+        }
+
+        .el-drawer p {
+            text-align: center;
+        }
+
+        .el-button {
+            float: right;
+            margin-top: 30px;
+            background: rgb(76, 170, 199);
+            border: none;
+        }
+
+        .el-collapse {
+            margin-top: 392px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-aside width="200px">
+                <img src="images/timg1.jpg" alt="">
+                <el-row>
+                    <el-col class="aside-t" style="letter-spacing: 7px;color:#808080">
+                        马尔科，《海贼王》中人物，绰号“不死鸟”，又叫“白胡子的右腕”，白胡子海贼团第一队队长兼船医，动物系“幻兽种”鸟鸟果实·不死鸟型能力者，拥有超强的再生能力。白胡子海贼团最老的船员之一，二十多年前就已经跟随白胡子。
+                    </el-col>
+                </el-row>
+                <el-collapse v-model="activeNames" @change="handleChange">
+                    <el-collapse-item title="路飞名言" name="1">
+                        <div>*不是能不能办到的问题 ，既然我已经下定决心要成为海贼王了 ，如果因此而战死的话 ，
+                            也无所谓了</div>
+                        <div>*你一个人的命不够，就把我们的都赌下去！因为我们是同伴啊！</div>
+                    </el-collapse-item>
+                    <el-collapse-item title="索隆名言" name="2">
+                        <div>*吾乃生于乱世之中，自当斩破尘埃。受尽苦难而不厌，此乃修罗之道。</div>
+                        <div>*不管接下来，我们之中什么人发生什么事，你都不能停止前进！</div>
+                    </el-collapse-item>
+                    <el-collapse-item title="山治名言" name="3">
+                        <div>*能原谅女人谎言的才是真正的男人。</div>
+                        <div>*我不过是...借点火</div>
+                    </el-collapse-item>
+                    <el-collapse-item title="娜美名言" name="4">
+                        <div>*告诉我，这艘船的航海士是谁？</div>
+                        <div>*一个人的力量是有限度的,不论想做什么事,一个人的力量是不够的,人是需要同伴的!</div>
+                    </el-collapse-item>
+                </el-collapse>
+            </el-aside>
+            <el-container>
+                <el-header>我的个人博客</el-header>
+                <el-main>
+                    <el-row>
+                        <el-col :span="12" offset="6">
+                            <el-carousel indicator-position="outside">
+                                <el-carousel-item v-for="item in 2" :key="item">
+                                </el-carousel-item>
+                            </el-carousel>
+                        </el-col>
+                    </el-row>
+                    <el-row class="wenben">
+                        <el-col>
+                            你可以选择在原处不停地跟周遭不解的人解释你为何这么做，让他们理解你，你可以选择什么都不讲，自顾自往前走。
+                        </el-col>
+                        <el-col>
+                            那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。
+                        </el-col>
+                    </el-row>
+
+                    <el-breadcrumb separator="/" style="margin-top:36px;">
+                        <el-breadcrumb-item :to="{ path: '/' }">路飞</el-breadcrumb-item>
+                        <el-breadcrumb-item><a href="/">索隆</a></el-breadcrumb-item>
+                        <el-breadcrumb-item>乔巴</el-breadcrumb-item>
+                        <el-breadcrumb-item>马尔科</el-breadcrumb-item>
+                    </el-breadcrumb>
+                </el-main>
+                <el-footer>
+                    <i class="el-icon-edit"></i>
+                    <i class="el-icon-share"></i>
+                    <i class="el-icon-delete"></i>
+                    <el-radio-group v-model="direction">
+                        <!-- <el-radio label="ltr">从左往右</el-radio> -->
+                        <!-- <el-radio label="rtl">从右往左</el-radio> -->
+                        <!-- <el-radio label="ttb">从上往下</el-radio>
+                        <el-radio label="btt">从下往上</el-radio> -->
+                    </el-radio-group>
+
+                    <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+                        点我打开
+                    </el-button>
+
+                    <el-drawer title="" :visible.sync="drawer" :direction="direction" :before-close="handleClose">
+                        <img src="images/timg2.png" alt="">
+                        <p style="margin-top:40px;">
+                            财富、名誉、力量，曾经获得拥有整个世界的男人—哥尔?罗杰！在他临死之际说的一句话人全世界的人趋之若鹜的奔向大海。“想要我的财宝吗？那就去海上找吧，我把他们全都放在那里了。”从此世界开始迎接大海贼时代的来临。
+                        </p>
+                        <p>欢迎来到海贼世界！</p>
+                        <p>Welcome!</p>
+                    </el-drawer>
+                </el-footer>
+            </el-container>
+        </el-container>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                drawer: false,
+                direction: 'rtl',
+            }
+        },
+        methods: {
+            handleChange(val) {
+                console.log(val);
+            },
+            handleClose(done) {
+                this.$confirm('确认关闭？')
+                    .then(_ => {
+                        done();
+                    })
+                    .catch(_ => { });
+            }
+        }
+
+    })
+
+</script>
+
+</html>

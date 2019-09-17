@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        body {
+            background: rgba(60, 6, 97, 0.925);
+            /* box-sizing: border-box; */
+            width: 100%;
+        }
+
+        .el-main {
+            overflow: hidden;
+        }
+
+        .login {
+            color: white;
+            font-size: 34px;
+            letter-spacing: 5px;
+            padding-top: 60px;
+            padding-left: 30px;
+            float: left;
+            margin-left: 610px;
+        }
+
+        .kuang {
+            /* padding-top: 300px; */
+            padding-left: 30px;
+            margin-left: 590px;
+            float: left;
+        }
+
+        .ima img {
+            width: 280px;
+            height: 320px;
+            margin-left: 10px;
+            background: #ccc;
+
+        }
+
+        .ima {
+            margin-top: 100px;
+            width: 1182px;
+            height: 320px;
+            margin-right: 200px;
+            float: right;
+            /* margin-top:600px; */
+        }
+
+        .el-input {
+            width: 200px;
+        }
+
+        .ipt1 {
+            margin-top: 40px;
+            width: 200px;
+        }
+
+        .ipt2 {
+            width: 200px;
+            margin-top: 20px;
+        }
+
+        .el-footer {
+            width: 100%;
+            /* height:100px; */
+            background: white;
+            /* box-sizing: border-box; */
+            min-height: 90px;
+        }
+
+        .el-button {
+            margin-left: 649px;
+            margin-top: 20px;
+            background: rgb(204, 204, 204);
+            border: none;
+            letter-spacing: 5px;
+            font-size: 18px;
+            color: white;
+        }
+
+        .el-button:hover {
+            background: cornflowerblue;
+        }
+
+        @keyframes anim {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #app {
+            animation: anim 5s;
+        }
+
+        #login1 {
+            display: none;
+        }
+
+        #risgister {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-header></el-header>
+            <el-main>
+                <el-row id="login1">
+                    <el-col>
+                        <el-row class="login">
+                            <el-col>
+                                登录页面
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col class="kuang">
+                                <el-row>
+                                    <el-col class="ipt1">
+                                        <el-input placeholder="请输入内容" v-model="input" clearable></el-input>
+                                    </el-col>
+                                </el-row>
+                                <el-row>
+                                    <el-col class="ipt2">
+                                        <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
+                                    </el-col>
+                                </el-row>
+                            </el-col>
+                        </el-row>
+                        <el-row class="lgn">
+                            <el-button type="success" round><a href="">点击登录</a></el-button>
+                        </el-row>
+                        <el-row class="ima">
+                            <el-col>
+                                <img src="images/timg8.jpg" alt="">
+                                <img src="images/timg1.jpg" alt="">
+                                <img src="images/timg9.jpg" alt="">
+                                <img src="images/timg2.jpg" alt="">
+                            </el-col>
+                        </el-row>
+                    </el-col>
+                </el-row>
+
+                <el-row id="rigister">
+                    <el-col>
+                        <el-row class="login">
+                            <el-col>
+                                注册页面
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col class="kuang">
+                                <el-row>
+                                    <el-col class="ipt1">
+                                        <el-input placeholder="请输入内容" v-model="input" clearable></el-input>
+                                    </el-col>
+                                </el-row>
+                                <el-row>
+                                    <el-col class="ipt2">
+                                        <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
+                                    </el-col>
+                                </el-row>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-button type="success" round>点击注册</el-button>
+                        </el-row>
+                        <el-row class="ima">
+                            <el-col>
+                                <img src="images/timg8.jpg" alt="">
+                                <img src="images/timg1.jpg" alt="">
+                                <img src="images/timg9.jpg" alt="">
+                                <img src="images/timg2.jpg" alt="">
+                            </el-col>
+                        </el-row>
+                    </el-col>
+                </el-row>
+            </el-main>
+            <el-footer>
+                <el-tabs v-model="activeName" @tab-click="handleClick">
+                    <el-tab-pane label="路飞" name="first">路飞</el-tab-pane>
+                    <el-tab-pane label="艾斯" name="second">艾斯</el-tab-pane>
+                    <el-tab-pane label="青雉" name="third">青雉</el-tab-pane>
+                    <el-tab-pane label="马尔科 " name="fourth">马尔科</el-tab-pane>
+                </el-tabs>
+            </el-footer>
+        </el-container>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                input: '',
+                activeName: 'second'
+            }
+        },
+        methods: {
+            handleClick(tab, event) {
+                console.log(tab, event);
+            }
+        }
+
+    })
+    //需求：当点击展开问题的时候，下面对应的内容显示，其他div隐藏
+    //查找触发事件的元素 a
+    var as = document.querySelectorAll(".login .el-button");
+    //遍历
+    for (var i = 0; i < as.length; i++) {
+        //绑定事件处理函数
+        as[i].onclick = function () {
+            //隐藏其他的div
+            var divs = document.querySelectorAll(".el-main>el-row");
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.display = "none";
+            }
+            //让对应的div显示
+            //获得当前a的href
+            var i = this.href.lastIndexOf("#");
+            var id = this.href.slice(i);
+            console.log(id);
+            document.querySelector(id).style.display = "block";
+        }
+
+    }
+
+</script>
+
+</html>

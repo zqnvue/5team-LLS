@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .el-header {
+            /* color: #333; */
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+            background-color: #414141;
+
+        }
+
+        .el-footer {
+            background-color: #414141;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .el-footer a {
+            cursor: pointer;
+            text-decoration: none;
+            color: #aaa;
+        }
+
+        /* .el-main {
+            background-color: rgb(219, 219, 219);
+            color: #333;
+            text-align: center;
+        } */
+
+        .el-aside {
+            /* border: 1px solid #D3DCE6; */
+            color: #333;
+            text-align: center;
+            padding-top: 15px;
+            /* line-height: 200px; */
+        }
+
+        body>.el-container {
+            /* margin-bottom: 40px; */
+            box-sizing: border-box;
+        }
+
+        .search {
+            line-height: 60px;
+        }
+
+        /* 主体布局结束 */
+        /* 头部样式开始 */
+        /* .el-row {
+            margin-bottom: 20px;
+        } */
+
+        .el-col {
+            border-radius: 4px;
+        }
+
+        /* .bg-purple-dark {
+            background: #414141;
+        } */
+
+        .el-menu-demo {
+            background: #fff;
+        }
+
+        .el-menu--horizontal{
+            border: none;
+        }
+
+        .block {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* 轮播图开始 */
+        .el-carousel__item h3 {
+            color: #475669;
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 350px;
+            margin: 0;
+        }
+
+        .el-carousel__item:nth-child(2n) {
+            background-image: url(i/b1.jpg);
+            background-size: 100% 100%;
+        }
+
+        .el-carousel__item:nth-child(2n+1) {
+            background-image: url(i/b2.jpg);
+            background-size: 100% 100%;
+        }
+        /* 轮播图结束 */
+
+        /* .left {
+            min-height: 500px;
+        } */
+
+        .left .left-a {
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        /* .right {
+            min-height: 900px;
+            background: green;
+        } */
+
+        /* .l-left {
+            min-height: 200px;
+            background: blue;
+        } */
+
+        .l-right {
+            /* min-height: 200px; */
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        .el-tag--plain {
+            margin: 10px 10px;
+            cursor: pointer;
+        }
+
+        .bar {
+            /* position: absolute; */
+            width: 95%;
+            margin: 0 auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* 右侧边栏 我的 头部 开始 */
+        .right .right-one {
+            min-height: 620px;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .right .right-one-head {
+            width: 100%;
+            min-height: 100px;
+            /* background: darkkhaki; */
+            border-bottom: 1px solid #ccc;
+        }
+
+        .right .right-one-body {
+            width: 100%;
+            min-height: 30px;
+            /* background: khaki; */
+            border-bottom: 1px solid #ccc;
+        }
+
+        .right .right-two {
+            min-height: 250px;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .right .tag-group {
+            padding-top: 15px;
+        }
+
+        .right .right-two {
+            margin-top: 20px;
+        }
+
+        .right .right-top {
+            padding-left: 15px;
+            color: #333;
+            padding-top: 15px;
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .right .right-bq {
+            box-sizing: border-box;
+            margin-top: 0px;
+        }
+
+        .demo-basic--circle {
+            padding-top: 15px;
+            padding-left: 20px;
+        }
+
+        .Aning {
+            color: #333;
+            font-size: 25px;
+            text-align: center;
+            line-height: 45px;
+            padding-left: 5px;
+            padding-top: 10px;
+        }
+
+        .Aning-sxin {
+            /* background: #333; */
+            width: 175px;
+            margin-left: 15px;
+        }
+        /* 右侧边栏 我的 头部 结束 */
+
+        /* 右侧边栏 我的 内容 开始 */
+        .right .right-one-body {
+            padding-top: 10px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .right .right-one-body .body-one .el-col {
+            cursor: pointer;
+
+        }
+        /* 右侧边栏 我的 内容 结束 */
+
+        /* 右侧边栏 我的 日期 开始 */
+        .right .right-one-footer {
+            height: 300px;
+        }
+
+        .right .right-one-footer .el-calendar {
+            height: 300px;
+        }
+
+        .el-calendar__body {
+            padding: 1px 2px 2px;
+        }
+        
+        .el-calendar-table tr,td .el-calendar-day{
+            /* color:red; */
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .el-calendar-table .el-calendar-day {
+            height: 50px;
+            line-height: 50px;
+        }
+        .el-calendar__header {
+            padding: 12px 15px;
+        }
+        /* 右侧边栏 我的 日期 结束 */
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 头部开始 -->
+        <el-container>
+
+            <el-header>
+                <el-row>
+                    <el-col :span="24">
+                        <div class="grid-content bg-purple-dark">我的个人博客</div>
+                    </el-col>
+                </el-row>
+            </el-header>
+
+            <!-- 导航 开始 -->
+            <el-row class="bar">
+                <el-col :span="18">
+                    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
+                        <el-menu-item index="1">首页</el-menu-item>
+                        <el-menu-item index="2">文章列表</el-menu-item>
+                        <el-menu-item index="3">登录</el-menu-item>
+                        <el-menu-item index="4">注册</el-menu-item>
+                    </el-menu>
+                </el-col>
+                <el-col :span="6">
+                    <el-input class="search" placeholder="搜索你想要的内容" suffix-icon="el-icon-search" v-model="input1">
+                    </el-input>
+                </el-col>
+            </el-row>
+            <!-- 导航 结束 -->
+
+            <!-- 循环图片 开始 -->
+            <el-main>
+                <template>
+                    <el-carousel height="350px" direction="vertical" :autoplay="false">
+                        <el-carousel-item v-for="item in 2" :key="item">
+                            <h3 class="medium">{{ item }}</h3>
+                        </el-carousel-item>
+                    </el-carousel>
+                </template>
+            </el-main>
+            <!-- 循环图片 结束 -->
+
+        </el-container>
+        <!-- 头部结束 -->
+
+        <!-- 中心开始 -->
+        <el-main>
+            <el-row :gutter="10">
+                <!-- 左半边主体 开始 -->
+                <el-col :span="18" class="left">
+                    <el-row>
+                        <el-col class="left-a">
+                            <el-row>
+                                <el-col :span="8" class="l-left"
+                                    style="padding-top: 50px;padding-left:20px;width: 200px">
+                                    <el-image src="i/f10.jpg"></el-image>
+                                </el-col>
+                                <el-col :span="16" class="l-right">
+                                    <p class="aside-bt">我本楚狂人 凤歌笑孔丘</p>
+                                    <p>2019-12-09</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, at quos,
+                                        enim
+                                        porro ab neque asperiores in ullam necessitatibus dolorum quis nobis corrupti
+                                        ducimus
+                                        sint commodi molestiae sequi, et magni.</p>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col class="left-a">
+                            <el-row>
+                                <el-col :span="8" class="l-left"
+                                    style="padding-top: 50px;padding-left:20px;width: 200px">
+                                    <el-image src="i/f12.jpg"></el-image>
+                                </el-col>
+                                <el-col :span="16" class="l-right">
+                                    <p class="aside-bt">我本楚狂人 凤歌笑孔丘</p>
+                                    <p>2019-12-09</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, at quos,
+                                        enim
+                                        porro ab neque asperiores in ullam necessitatibus dolorum quis nobis corrupti
+                                        ducimus
+                                        sint commodi molestiae sequi, et magni.</p>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col class="left-a">
+                            <el-row>
+                                <el-col :span="8" class="l-left"
+                                    style="padding-top: 50px;padding-left:20px;width: 200px">
+                                    <el-image src="i/f20.jpg"></el-image>
+                                </el-col>
+                                <el-col :span="16" class="l-right">
+                                    <p class="aside-bt">我本楚狂人 凤歌笑孔丘</p>
+                                    <p>2019-12-09</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, at quos,
+                                        enim
+                                        porro ab neque asperiores in ullam necessitatibus dolorum quis nobis corrupti
+                                        ducimus
+                                        sint commodi molestiae sequi, et magni.</p>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col class="left-a">
+                            <el-row>
+                                <el-col :span="8" class="l-left"
+                                    style="padding-top: 50px;padding-left:20px;width: 200px">
+                                    <el-image src="i/f19.jpg"></el-image>
+                                </el-col>
+                                <el-col :span="16" class="l-right">
+                                    <p class="aside-bt">我本楚狂人 凤歌笑孔丘</p>
+                                    <p>2019-12-09</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, at quos,
+                                        enim
+                                        porro ab neque asperiores in ullam necessitatibus dolorum quis nobis corrupti
+                                        ducimus
+                                        sint commodi molestiae sequi, et magni.</p>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col class="left-a">
+                            <el-row>
+                                <el-col :span="8" class="l-left"
+                                    style="padding-top: 50px;padding-left:20px;width: 200px">
+                                    <el-image src="i/f22.jpg"></el-image>
+                                </el-col>
+                                <el-col :span="16" class="l-right">
+                                    <p class="aside-bt">我本楚狂人 凤歌笑孔丘</p>
+                                    <p>2019-12-09</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, at quos,
+                                        enim
+                                        porro ab neque asperiores in ullam necessitatibus dolorum quis nobis corrupti
+                                        ducimus
+                                        sint commodi molestiae sequi, et magni.</p>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+                </el-col>
+                <!-- 左半边主体 结束 -->
+
+                <!-- 右半边主体 开始 -->
+                <el-col :span="6" class="right">
+                    <!-- 我的 侧边栏 -->
+                    <el-row>
+                        <el-col class="right-one">
+                            <!-- 头部信息 -->
+                            <el-row>
+                                <el-col class="right-one-head">
+                                    <template>
+                                        <el-row class="demo-avatar demo-basic">
+                                            <el-col :span="8">
+                                                <!-- <div class="sub-title">circle</div> -->
+                                                <div class="demo-basic--circle">
+                                                    <div class="block">
+                                                        <el-avatar :size="70" src="i/f14.jpg"></el-avatar>
+                                                    </div>
+                                                </div>
+                                            </el-col>
+                                            <el-col :span="10">
+                                                <el-row class="Aning">
+                                                    A.ning
+                                                </el-row>
+                                                <el-row class="Aning-sxin">
+                                                    <el-button size="mini" type="success" round>私信</el-button>
+                                                    <el-button size="mini" type="primary" round>合作</el-button>
+                                                </el-row>
+                                            </el-col>
+                                        </el-row>
+                                    </template>
+                                </el-col>
+                            </el-row>
+                            <!-- 中间信息 -->
+                            <el-row>
+                                <el-col class="right-one-body">
+                                    <el-row class="body-one" :span="20" :gutter="2">
+                                        <el-col :span="6">原创</el-col>
+                                        <el-col :span="6">粉丝</el-col>
+                                        <el-col :span="6">喜欢</el-col>
+                                        <el-col :span="6">评论</el-col>
+                                    </el-row>
+                                    <el-row class="body-two" :span="20" :gutter="2">
+                                        <el-col :span="6">50</el-col>
+                                        <el-col :span="6">82</el-col>
+                                        <el-col :span="6">67</el-col>
+                                        <el-col :span="6">50</el-col>
+                                    </el-row>
+                                </el-col>
+                            </el-row>
+                            <el-row>
+                                <el-col :span="24" class="right-one-footer">
+                                    <!-- <el-row>
+                                        <el-col>友情链接</el-col>
+                                    </el-row>
+                                    <el-row>
+                                        <el-col>小红博客</el-col>
+                                        <el-col>小绿博客</el-col>
+                                        <el-col>小蓝博客</el-col>
+                                        <el-col>小黑博客</el-col>
+                                    </el-row> -->
+                                    <div style="width:100%;height:180px;padding-top: 5px;padding-bottom: 5px;">
+                                        <el-calendar v-model="value"></el-calendar>
+                                    </div>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+
+                    <!-- 标签 侧边栏 开始 -->
+                    <el-row>
+                        <el-col class="right-two">
+                            <el-row class="right-top">
+                                <el-col>热门标签</el-col>
+                            </el-row>
+                            <el-row class="right-bq">
+                                <el-col>
+                                    <div class="tag-group">
+                                        <el-tag v-for="item in items" :key="item.label" :type="item.type"
+                                            effect="plain">
+                                            {{ item.label }}
+                                        </el-tag>
+                                    </div>
+                                </el-col>
+                            </el-row>
+                        </el-col>
+                    </el-row>
+                    <!-- 标签 侧边栏 结束 -->
+
+                </el-col>
+                <!-- 右半边主体 结束 -->
+            </el-row>
+        </el-main>
+        <!-- 中心结束 -->
+
+        <!-- 底部 开始 -->
+        <el-container>
+            <el-footer>
+                <template>
+                    <div>
+                        <span><a href="">@A.ning</a></span>
+                        <el-divider direction="vertical"></el-divider>
+                        <span><a href="">北京</a></span>
+                        <el-divider direction="vertical"></el-divider>
+                        <span><a href="">北京信息职业技术学院</a></span>
+                        <el-divider direction="vertical"></el-divider>
+                        <span><a href="">I Love China</a></span>
+                    </div>
+                </template>
+            </el-footer>
+        </el-container>
+        <!-- 底部 结束 -->
+    </div>
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                input1: '',
+                activeIndex: '1',
+                items: [
+                    { type: '', label: 'ajax' },
+                    { type: 'success', label: 'Dreamweaver' },
+                    { type: 'info', label: 'html' },
+                    { type: 'danger', label: 'js' },
+                    { type: 'warning', label: 'css' },
+                    { type: '', label: 'MySQL' },
+                    { type: 'success', label: 'PHP' },
+                    { type: 'info', label: 'dedeCMS' },
+                    { type: 'danger', label: '苏宁' },
+                    { type: 'warning', label: '搞笑' },
+                    { type: 'danger', label: '娱乐' },
+                    { type: 'danger', label: '博客' },
+                ],
+                value: new Date()
+            }
+        }
+    })
+</script>
+
+</html>

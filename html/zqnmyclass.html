@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/zqnmyclass.css">
+    <title>在线提问</title>
+</head>
+<body>
+    <div class="bar">
+        <div class="logo">
+            <img src="../images/logo.png" alt="">
+        </div>
+        <div class="name">
+            <p>WEB前端开发</p>
+        </div>
+        <div class="xueqi">
+            <p>第五学期(本学期)</p>
+        </div>
+    </div>
+    <div class="header">
+        <div class="tool">
+            <ul>
+                <li><a href="">我的专业</a></li>
+                <li><a href="">我的课程</a></li>
+                <li><a href="">我的成长</a></li>
+                <li><a href="">我的参与</a></li>
+                <li><a href="">我的考试</a></li>
+            </ul>
+        </div>
+        <div class="user">
+            <div id="fl" class="ling">11</div>
+            <div id="fl" class="uname">张倩男</div>
+            <div id="fl" class="ask">在线提问</div>
+            <div id="fl" class="logout">22</    div>
+        </div>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Java 最核心的基础是什么">
+        <button class="answer">搜答案</button>
+        <button class="myask">我的提问</button>
+    </div>
+
+
+    <div class="main">
+        <div class="m-h-lesson">
+            <p>WEB前端基础（HTML5和CSS3）基础</p>
+            <a href="">返回></a>
+        </div>
+        <div class="m-h-select">
+            <ul id="tab-head">
+                <li><a href="#content1" class="selected">我要上课</a></li>
+                <li><a href="#content2">查看教室</a></li>
+                <li><a href="#content3">我要备课</a></li>
+                <li><a href="#content4">添加习题</a></li>
+            </ul>
+        </div>
+        <div id="tab-content">
+            <div class="m-center show">
+                <div class="m-c-top">说明：该视频暂时无法播放，请安装Flash播放器。为了能够正常观看视频，请点击下载最新版本。<a href="">立即下载</a></div>
+                <div class="m-c-down">
+                    <div class="m-c-d-left">
+                        <video class="show" src="../mp4/kuang.mp4" controls width="680px" height="302px"></video>
+                        <video src="../mp4/kuang.mp4" controls width="680px" height="302px"></video>
+                        <video src="../mp4/kuang.mp4" controls width="680px" height="302px"></video>
+                    </div>
+                    <div class="m-c-d-right">
+                        <div class="m-c-d-r-top1">
+                            <div class="m-c-d-r-top">
+                                <img src="../images/video.png" alt="">
+                                <span>视频播放列表</span>
+                            </div>
+                        </div>
+                        <div class="v-head">
+                            <div class="down2 selected">下大雨11111</div>
+                            <div class="down2">拔萝卜22222</div>
+                            <div class="down2">哐哐哐33333</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="m-center">查看教室111</div>
+            <div class="m-center">我要备课222</div>
+            <div class="m-center">
+                <div class="m-c-testtop">
+                    <span>添加习题</span>
+                    <button>不知道写的啥</button>
+                </div>
+                <div class="m-c-testdown">
+                    <p><span>1.图书馆好无聊好嗡嗡！</span><a href="#dian1">1点点点</a></p>
+                    <p><span>2.图书馆好无聊好嗡嗡！</span><a href="#dian2">2点点点</a></p>
+                    <p><span>3.图书馆好无聊好嗡嗡！</span><a href="#dian3">3点点点</a></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="footer">
+        <div class="bbox">
+            <div class="b1">
+                <span>
+                    <img src="../images/logo.png" alt="">
+                </span>
+                <span class="line">|</span>
+                培养能力 塑造人才
+            </div>
+            <div class="b2">
+                <a href="" class="bb1">联系我们</a>
+                <a href="" class="bb2">意见反馈</a>
+                <a href="" class="bb3">名师风采</a>
+            </div>
+            <div class="b3">Copyright 2017 联想 (北京) 有限公司 京ICP备11035381 | 京公网安备110108007970号</div>
+        </div>
+    </div>
+
+    <script>
+        // 第一部分，tab标签切换
+        var tabs = document.querySelectorAll('#tab-head a');
+        var contents = document.querySelectorAll('#tab-content .m-center');
+        (function changeTab(){
+            for(var i=0;i<tabs.length;i++){
+                tabs[i].onclick = showTab;
+            }
+        })();
+        function showTab(){
+            for(var i=0;i<tabs.length;i++){
+                if(tabs[i] === this){
+                    tabs[i].className = "selected";
+                    contents[i].className = "m-center show";
+                }else{
+                    tabs[i].className = "";
+                    contents[i].className = "m-center";
+                }
+            }
+        }
+
+        // 第二部分，视频切换
+        var vs = document.getElementsByClassName('v-head')[0].getElementsByClassName('down2');
+        var ds = document.getElementsByClassName('m-c-d-left')[0].getElementsByTagName('video');    
+        (function changeVideo(){
+            for(var i=0;i<vs.length;i++){
+                vs[i].onclick = showVideo;
+            }
+        })();
+        function showVideo(){
+            for(var i=0;i<vs.length;i++){
+                if(vs[i] === this){
+                    vs[i].className = "down2 selected";
+                    ds[i].className = "show";
+                }else{
+                    vs[i].className = "down2";
+                    ds[i].className = "";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
